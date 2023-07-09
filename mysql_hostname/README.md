@@ -4,22 +4,22 @@ create hostname mysql with IP server and can connect in third party app
 ### Install MySQL
 ```
 $ sudo apt-get update
-``` <br>
+```
 ```
 $ sudo apt install mysql-server
-``` <br>
+``` 
 ```
 $ sudo systemctl restart mysql
-``` <br>
+``` 
 ```
 $ sudo mysql
-``` <br>
+``` 
 ```
 mysql > ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-``` <br>
+``` 
 ```
 mysql > exit
-``` <br>
+``` 
 ```
 $ sudo mysql_secure_installation
 ```
@@ -29,10 +29,10 @@ Edit file config and save on directory `/etc/mysql/mysql.conf.d/mysqld.cnf`
 ```
 $ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
-change this line:
+change this line: <br>
 `bind-address	= 127.0.0.1`
 
-to this:
+to this: <br>
 `bind-address	= 0.0.0.0`
 
 ### Create User Mysql and Grant User
@@ -43,17 +43,17 @@ $ mysql -u root -ppassword
 Create user admins
 ```
 mysql > CREATE USER 'admins'@'localhost' IDENTIFIED BY 'password';
-``` <br>
+```
 ```
 mysql > CREATE USER 'admins'@'%' IDENTIFIED BY 'password';
 ```
 Grant user admins to all database
 ```
 mysql > GRANT ALL PRIVILEGES ON *.* TO 'admins'@'localhost' WITH GRANT OPTION;
-``` <br>
+```
 ```
 mysql > GRANT ALL PRIVILEGES ON *.* TO 'admins'@'%' WITH GRANT OPTION;
-``` <br>
+```
 ```
 mysql > FLUSH PRIVILEGES;
 ```
@@ -71,12 +71,14 @@ Password  : password <br>
 Database  : company<br>
 
 ## Connect database with third party (DBeaver)
-![image](https://github.com/fauzigalih/mysql-host-name/assets/64176403/77b6f750-72cb-4d64-948c-683bc5e0448b)
-![image](https://github.com/fauzigalih/mysql-host-name/assets/64176403/44bb8118-0f32-4c88-a8c4-976fdcb509e1)
+<img width="667" alt="image" src="https://github.com/fauzigalih/mysql/assets/64176403/47b796e2-f2c2-404c-8d28-32c349dc4841">
+<img width="671" alt="image" src="https://github.com/fauzigalih/mysql/assets/64176403/1e627827-a652-4d5a-9ab6-91817cdeaa59">
+
 
 Click button `Test Connection` 
 if success, will display like this:
 
-![image](https://github.com/fauzigalih/mysql-host-name/assets/64176403/6ec47ac5-7f97-4125-a42c-3bc9438eba7d)
+<img width="422" alt="image" src="https://github.com/fauzigalih/mysql/assets/64176403/3cba1ec8-0377-4f39-80d8-fa56fa05dccc">
+
 
 ### Yeayy,Finish....
