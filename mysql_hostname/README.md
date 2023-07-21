@@ -30,10 +30,12 @@ Edit file config and save on directory `/etc/mysql/mysql.conf.d/mysqld.cnf`
 $ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 ```
 change this line: <br>
-`bind-address	= 127.0.0.1`
+`bind-address	= 127.0.0.1`<br>
+`mysqlx-bind-address    = 127.0.0.1`
 
 to this: <br>
-`bind-address	= 0.0.0.0`
+`bind-address	= 0.0.0.0`<br>
+`# mysqlx-bind-address    = 127.0.0.1`
 
 ### Create User Mysql and Grant User
 Login with user root
